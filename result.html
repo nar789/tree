@@ -1,0 +1,583 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>접목묘 활착 및 병해진단 데이터베이스</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    
+      <link href="assets/css/toolkit-inverse.css" rel="stylesheet">
+    
+    
+    <link href="assets/css/application.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+  </head>
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 sidebar">
+        <nav class="sidebar-nav">
+          <div class="sidebar-header">
+            <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+              <span class="sr-only">Toggle nav</span>
+            </button>
+            <a class="sidebar-brand img-responsive" href="index.html">
+              <span class="icon icon-leaf sidebar-brand-icon"></span>
+            </a>
+          </div>
+
+          <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+            <form class="sidebar-form">
+              <input class="form-control" type="text" placeholder="검색">
+              <button type="submit" class="btn-link">
+                <span class="icon icon-magnifying-glass"></span>
+              </button>
+            </form>
+            <ul class="nav nav-pills nav-stacked flex-column">
+              <li class="nav-header">::대한민국 농촌진흥청::</li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  " href="input.html">Input</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active"href="result.html">Result</a>
+              </li>
+              <!--
+              <li class="nav-item">
+                <a class="nav-link " href="icon-nav/index.html">Icon nav</a>
+              </li>
+
+              <li class="nav-header">More</li>
+              <li class="nav-item">
+                <a class="nav-link "href="docs/index.html">
+                  Toolkit docs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://getbootstrap.com" target="blank">
+                  Bootstrap docs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="index-light/index.html">Light UI</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#docsModal" data-toggle="modal">
+                  Example modal
+                </a>
+              </li>
+              //-->
+            </ul>
+            <hr class="visible-xs mt-3">
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-9 content">
+        <div class="dashhead">
+  <div class="dashhead-titles">
+    <h6 class="dashhead-subtitle">접목묘 활착 및 병해진단 데이터베이스</h6>
+    <h2 class="dashhead-title">Result</h2>
+  </div>
+<!--
+  <div class="btn-toolbar dashhead-toolbar">
+    <div class="btn-toolbar-item input-with-icon">
+      <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
+      <span class="icon icon-calendar"></span>
+    </div>
+  </div>//-->
+</div>
+
+<hr class="mt-3">
+<h4></h4>
+
+
+
+
+<div class="card mt-3 col">
+  <div class="card-body">
+    <h5 class="card-title">영상 이미지 모델 검증</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">
+      <select class="form-control">
+        <option>SWIR-SMLR</option>
+        <option>PLS</option>
+        <option>B PLS</option>
+      </select>
+
+
+      <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Dataset</th>
+          <th scope="col">No. Of Wavelengths</th>
+          <th scope="col">Cal</th>
+          <th scope="col">Val</th>
+          <th scope="col">SEC</th>
+          <th scope="col">SEP</th>
+          <th scope="col">Cal</th>
+          <th scope="col">Val</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">NOR</th>
+          <td>8</td>
+          <td>0.7</td>
+          <td>0.66</td>
+          <td>1.25</td>
+          <td>1.26</td>
+          <td>1.25</td>
+          <td>1.25</td>
+        </tr>
+        <tr>
+          <th scope="row">FD</th>
+          <td>8</td>
+          <td>0.74</td>
+          <td>0.64</td>
+          <td>1.15</td>
+          <td>1.28</td>
+          <td>1.15</td>
+          <td>1.29</td>
+        </tr>
+      </tbody>
+    </table>
+      
+
+       <select class="form-control">
+        <option>ALL</option>
+        <option>Normalization</option>
+        <option>First Derivative</option>
+      </select>
+
+
+      <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Dataset</th>
+          <th scope="col" colspan="7">No. Of Wavelengths</th>
+          <!--
+          <th scope="col">Cal</th>
+          <th scope="col">Val</th>
+          <th scope="col">SEC</th>
+          <th scope="col">SEP</th>
+          <th scope="col">Cal</th>
+          <th scope="col">Val</th>//-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">NOR</th>
+          <td>1063</td>
+          <td>1091</td>
+          <td>1340</td>
+          <td>1868</td>
+          <td>1880</td>
+          <td>2182</td>
+          <td>1880</td>
+          <td>1880</td>
+        </tr>
+        <tr>
+          <th scope="row">FD</th>
+          <td>1040</td>
+          <td>1046</td>
+          <td>1120</td>
+          <td>1880</td>
+          <td>1880</td>
+          <td>1880</td>
+          <td>1880</td>
+          <td>1880</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5>Experiment Condition Result</h5>
+
+    <div class="form-group">
+        <label>Reflectance</label>
+        <input type="text" class="form-control" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label>Correlation coefficient </label>
+        <input type="text" class="form-control" placeholder="">
+      </div>
+
+    </p>
+  </div>
+</div>
+
+<div class="card mt-3 col">
+  <div class="card-body">
+    <h5 class="card-title">분석 결과</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">
+         <select class="form-control">
+        <option>SWIR-SMLR</option>
+        <option>PLS</option>
+        <option>B PLS</option>
+      </select>
+
+      <div class="hr-divider my-4">
+        <ul class="nav nav-pills hr-divider-content hr-divider-nav" role="tablist">
+    
+    <!--
+    <li class="nav-item" role="presentation">
+      <a href="#profit" class="nav-link" role="tab" data-toggle="tab" aria-controls="profit">Profit</a>
+    </li>//-->
+  </ul>
+</div>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="sales">
+    <div class="ex-line-graphs">
+       <canvas
+        class="ex-line-graph"
+        width="600" height="350"
+        data-chart="line"
+        data-dataset="[[2500, 3300, 2512, 2775, 2498, 3512, 2925, 4275, 3507, 3825, 3445, 3985]]"
+        data-labels="['','100000','','','200000','','','300000','','','400000','']"
+        data-dark="true">
+      </canvas>
+    </div>
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="inventory">
+    <div class="ex-line-graphs">
+      <canvas
+        class="ex-line-graph"
+        width="600" height="400"
+        data-chart="bar"
+        data-dark="true"
+        data-labels="['4월','5월','6월','7월']"
+        data-dataset="[[65, 59, 80, 81], [28, 48, 40, 19]]"
+        data-dataset-options="[{label: '향온'}, {label: '향습'}]">
+      </canvas>
+    </div>
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="profit">
+    <div class="row ex-graphs text-center">
+      <div class="col-sm-4 mb-4 mb-sm-0">
+        <div class="w-3 mx-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+
+            data-chart="doughnut"
+            data-dataset="[230, 130]"
+            data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+            data-labels="['Returning', 'New']">
+          </canvas>
+        </div>
+        <strong class="text-muted">Traffic</strong>
+        <h3>New vs Returning</h3>
+      </div>
+      <div class="col-sm-4 mb-4 mb-sm-0">
+        <div class="w-3 mx-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+            data-chart="doughnut"
+            data-dataset="[330,30]"
+            data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+            data-labels="['Returning', 'New']">
+          </canvas>
+        </div>
+        <strong class="text-muted">Revenue</strong>
+        <h3>New vs Recurring</h3>
+      </div>
+      <div class="col-sm-4 mb-4 mb-sm-0">
+        <div class="w-3 mx-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+            data-chart="doughnut"
+            data-dataset="[100,260]"
+            data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+            data-labels="['Referrals', 'Direct']">
+          </canvas>
+        </div>
+        <strong class="text-muted">Traffic</strong>
+        <h3>Direct vs Referrals</h3>
+      </div>
+    </div>
+  </div>
+</div>
+   
+    </p>
+  </div>
+</div>
+
+
+
+<div class="card mt-3 col">
+  <div class="card-body">
+    <h5 class="card-title">접목묘 활착 분석</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">
+      <div class="row">
+       <div class="col">
+        <img src="p1.jpg" width="250px" height="250px">
+       </div>
+       <div class="col">
+        <img src="p2.jpg" width="250px" height="250px">
+       </div>
+       <div class="col">
+
+                <div class="hr-divider my-4">
+              <ul class="nav nav-pills hr-divider-content hr-divider-nav" role="tablist">
+                
+                <!--
+                <li class="nav-item" role="presentation">
+                  <a href="#profit" class="nav-link" role="tab" data-toggle="tab" aria-controls="profit">Profit</a>
+                </li>//-->
+              </ul>
+               </div>
+
+                            <div class="tab-content">
+                              <div role="tabpanel" class="tab-pane active" id="sales">
+                                <div class="ex-line-graphs">
+                                   <canvas
+                                    class="ex-line-graph"
+                                    width="600" height="350"
+                                    data-chart="line"
+                                    data-dataset="[[2500, 3300, 2512, 2775, 2498, 3512, 2925, 4275, 3507, 3825, 3445, 3985]]"
+                                    data-labels="['','100000','','','200000','','','300000','','','400000','']"
+                                    data-dark="true">
+                                  </canvas>
+                                </div>
+                              </div>
+
+                              <div role="tabpanel" class="tab-pane" id="inventory">
+                                <div class="ex-line-graphs">
+                                  <canvas
+                                    class="ex-line-graph"
+                                    width="600" height="400"
+                                    data-chart="bar"
+                                    data-dark="true"
+                                    data-labels="['4월','5월','6월','7월']"
+                                    data-dataset="[[65, 59, 80, 81], [28, 48, 40, 19]]"
+                                    data-dataset-options="[{label: '향온'}, {label: '향습'}]">
+                                  </canvas>
+                                </div>
+                              </div>
+
+                              <div role="tabpanel" class="tab-pane" id="profit">
+                                <div class="row ex-graphs text-center">
+                                  <div class="col-sm-4 mb-4 mb-sm-0">
+                                    <div class="w-3 mx-auto">
+                                      <canvas
+                                        class="ex-graph"
+                                        width="200" height="200"
+
+                                        data-chart="doughnut"
+                                        data-dataset="[230, 130]"
+                                        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                                        data-labels="['Returning', 'New']">
+                                      </canvas>
+                                    </div>
+                                    <strong class="text-muted">Traffic</strong>
+                                    <h3>New vs Returning</h3>
+                                  </div>
+                                  <div class="col-sm-4 mb-4 mb-sm-0">
+                                    <div class="w-3 mx-auto">
+                                      <canvas
+                                        class="ex-graph"
+                                        width="200" height="200"
+                                        data-chart="doughnut"
+                                        data-dataset="[330,30]"
+                                        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                                        data-labels="['Returning', 'New']">
+                                      </canvas>
+                                    </div>
+                                    <strong class="text-muted">Revenue</strong>
+                                    <h3>New vs Recurring</h3>
+                                  </div>
+                                  <div class="col-sm-4 mb-4 mb-sm-0">
+                                    <div class="w-3 mx-auto">
+                                      <canvas
+                                        class="ex-graph"
+                                        width="200" height="200"
+                                        data-chart="doughnut"
+                                        data-dataset="[100,260]"
+                                        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                                        data-labels="['Referrals', 'Direct']">
+                                      </canvas>
+                                    </div>
+                                    <strong class="text-muted">Traffic</strong>
+                                    <h3>Direct vs Referrals</h3>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+       </div>
+    </p>
+  </div>
+</div>
+
+<div class="card mt-3 col">
+  <div class="card-body">
+    <h5 class="card-title">접목묘 병해 진단</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">
+      <div class="row">
+       <div class="col">
+        <img src="p1.jpg" width="250px" height="250px">
+       </div>
+       <div class="col">
+        <img src="p2.jpg" width="250px" height="250px">
+       </div>
+       <div class="col">
+
+                <div class="hr-divider my-4">
+              <ul class="nav nav-pills hr-divider-content hr-divider-nav" role="tablist">
+                
+                <!--
+                <li class="nav-item" role="presentation">
+                  <a href="#profit" class="nav-link" role="tab" data-toggle="tab" aria-controls="profit">Profit</a>
+                </li>//-->
+              </ul>
+               </div>
+
+                            <div class="tab-content">
+                              <div role="tabpanel" class="tab-pane active" id="sales">
+                                <div class="ex-line-graphs">
+                                   <canvas
+                                    class="ex-line-graph"
+                                    width="600" height="350"
+                                    data-chart="line"
+                                    data-dataset="[[2500, 3300, 2512, 2775, 2498, 3512, 2925, 4275, 3507, 3825, 3445, 3985]]"
+                                    data-labels="['','100000','','','200000','','','300000','','','400000','']"
+                                    data-dark="true">
+                                  </canvas>
+                                </div>
+                              </div>
+
+                              <div role="tabpanel" class="tab-pane" id="inventory">
+                                <div class="ex-line-graphs">
+                                  <canvas
+                                    class="ex-line-graph"
+                                    width="600" height="400"
+                                    data-chart="bar"
+                                    data-dark="true"
+                                    data-labels="['4월','5월','6월','7월']"
+                                    data-dataset="[[65, 59, 80, 81], [28, 48, 40, 19]]"
+                                    data-dataset-options="[{label: '향온'}, {label: '향습'}]">
+                                  </canvas>
+                                </div>
+                              </div>
+
+                              <div role="tabpanel" class="tab-pane" id="profit">
+                                <div class="row ex-graphs text-center">
+                                  <div class="col-sm-4 mb-4 mb-sm-0">
+                                    <div class="w-3 mx-auto">
+                                      <canvas
+                                        class="ex-graph"
+                                        width="200" height="200"
+
+                                        data-chart="doughnut"
+                                        data-dataset="[230, 130]"
+                                        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                                        data-labels="['Returning', 'New']">
+                                      </canvas>
+                                    </div>
+                                    <strong class="text-muted">Traffic</strong>
+                                    <h3>New vs Returning</h3>
+                                  </div>
+                                  <div class="col-sm-4 mb-4 mb-sm-0">
+                                    <div class="w-3 mx-auto">
+                                      <canvas
+                                        class="ex-graph"
+                                        width="200" height="200"
+                                        data-chart="doughnut"
+                                        data-dataset="[330,30]"
+                                        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                                        data-labels="['Returning', 'New']">
+                                      </canvas>
+                                    </div>
+                                    <strong class="text-muted">Revenue</strong>
+                                    <h3>New vs Recurring</h3>
+                                  </div>
+                                  <div class="col-sm-4 mb-4 mb-sm-0">
+                                    <div class="w-3 mx-auto">
+                                      <canvas
+                                        class="ex-graph"
+                                        width="200" height="200"
+                                        data-chart="doughnut"
+                                        data-dataset="[100,260]"
+                                        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+                                        data-labels="['Referrals', 'Direct']">
+                                      </canvas>
+                                    </div>
+                                    <strong class="text-muted">Traffic</strong>
+                                    <h3>Direct vs Referrals</h3>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+       </div>
+    </p>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div id="docsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Example modal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <p>You're looking at an example modal in the dashboard theme.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cool, got it!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/tablesorter.min.js"></script>
+    <script src="assets/js/toolkit.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
+</html>
+

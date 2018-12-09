@@ -1,0 +1,543 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>접목묘 활착 및 병해진단 데이터베이스</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    
+      <link href="assets/css/toolkit-inverse.css" rel="stylesheet">
+    
+    
+    <link href="assets/css/application.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+  </head>
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 sidebar">
+        <nav class="sidebar-nav">
+          <div class="sidebar-header">
+            <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+              <span class="sr-only">Toggle nav</span>
+            </button>
+            <a class="sidebar-brand img-responsive" href="index.html">
+              <span class="icon icon-leaf sidebar-brand-icon"></span>
+            </a>
+          </div>
+
+          <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+            <form class="sidebar-form">
+              <input class="form-control" type="text" placeholder="검색">
+              <button type="submit" class="btn-link">
+                <span class="icon icon-magnifying-glass"></span>
+              </button>
+            </form>
+            <ul class="nav nav-pills nav-stacked flex-column">
+              <li class="nav-header">::대한민국 농촌진흥청::</li>
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="input.html">Input</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "href="result.html">Result</a>
+              </li>
+              <!--
+              <li class="nav-item">
+                <a class="nav-link " href="icon-nav/index.html">Icon nav</a>
+              </li>
+
+              <li class="nav-header">More</li>
+              <li class="nav-item">
+                <a class="nav-link "href="docs/index.html">
+                  Toolkit docs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://getbootstrap.com" target="blank">
+                  Bootstrap docs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="index-light/index.html">Light UI</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#docsModal" data-toggle="modal">
+                  Example modal
+                </a>
+              </li>
+              //-->
+            </ul>
+            <hr class="visible-xs mt-3">
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-9 content">
+        <div class="dashhead">
+  <div class="dashhead-titles">
+    <h6 class="dashhead-subtitle">접목묘 활착 및 병해진단 데이터베이스</h6>
+    <h2 class="dashhead-title">Home</h2>
+  </div>
+<!--
+  <div class="btn-toolbar dashhead-toolbar">
+    <div class="btn-toolbar-item input-with-icon">
+      <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
+      <span class="icon icon-calendar"></span>
+    </div>
+  </div>//-->
+</div>
+
+<hr class="mt-3">
+<h4>항온/항습 실험환경</h4>
+
+<div class="hr-divider my-4">
+  <ul class="nav nav-pills hr-divider-content hr-divider-nav" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a href="#sales" class="nav-link active" role="tab" data-toggle="tab" aria-controls="sales">꺽은선그래프</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a href="#inventory" class="nav-link" role="tab" data-toggle="tab" aria-controls="inventory">막대그래프</a>
+    </li>
+    <!--
+    <li class="nav-item" role="presentation">
+      <a href="#profit" class="nav-link" role="tab" data-toggle="tab" aria-controls="profit">Profit</a>
+    </li>//-->
+  </ul>
+</div>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="sales">
+    <div class="ex-line-graphs">
+       <canvas
+        class="ex-line-graph"
+        width="600" height="350"
+        data-chart="line"
+        data-dataset="[[2500, 3300, 2512, 2775, 2498, 3512, 2925, 4275, 3507, 3825, 3445, 3985]]"
+        data-labels="['','4월','','','5월','','','6월','','','7월','']"
+        data-dark="true">
+      </canvas>
+    </div>
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="inventory">
+    <div class="ex-line-graphs">
+      <canvas
+        class="ex-line-graph"
+        width="600" height="400"
+        data-chart="bar"
+        data-dark="true"
+        data-labels="['4월','5월','6월','7월']"
+        data-dataset="[[65, 59, 80, 81], [28, 48, 40, 19]]"
+        data-dataset-options="[{label: '향온'}, {label: '향습'}]">
+      </canvas>
+    </div>
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="profit">
+    <div class="row ex-graphs text-center">
+      <div class="col-sm-4 mb-4 mb-sm-0">
+        <div class="w-3 mx-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+
+            data-chart="doughnut"
+            data-dataset="[230, 130]"
+            data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+            data-labels="['Returning', 'New']">
+          </canvas>
+        </div>
+        <strong class="text-muted">Traffic</strong>
+        <h3>New vs Returning</h3>
+      </div>
+      <div class="col-sm-4 mb-4 mb-sm-0">
+        <div class="w-3 mx-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+            data-chart="doughnut"
+            data-dataset="[330,30]"
+            data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+            data-labels="['Returning', 'New']">
+          </canvas>
+        </div>
+        <strong class="text-muted">Revenue</strong>
+        <h3>New vs Recurring</h3>
+      </div>
+      <div class="col-sm-4 mb-4 mb-sm-0">
+        <div class="w-3 mx-auto">
+          <canvas
+            class="ex-graph"
+            width="200" height="200"
+            data-chart="doughnut"
+            data-dataset="[100,260]"
+            data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+            data-labels="['Referrals', 'Direct']">
+          </canvas>
+        </div>
+        <strong class="text-muted">Traffic</strong>
+        <h3>Direct vs Referrals</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="row text-center mt-5">
+  <div class="col-md-4 mb-4 mb-md-3">
+    <div class="w-3 mx-auto">
+      <canvas
+        class="ex-graph"
+        width="200" height="200"
+        data-chart="doughnut"
+        data-dataset="[230, 130]"
+        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+        data-labels="['Returning', 'New']">
+      </canvas>
+    </div>
+    <strong class="text-muted">Traffic</strong>
+    <h4>New vs Returning</h4>
+  </div>
+  <div class="col-md-4 mb-4 mb-md-3">
+    <div class="w-3 mx-auto">
+      <canvas
+        class="ex-graph"
+        width="200" height="200"
+        data-chart="doughnut"
+        data-dataset="[330,30]"
+        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+        data-labels="['Returning', 'New']">
+      </canvas>
+    </div>
+    <strong class="text-muted">Revenue</strong>
+    <h4>New vs Recurring</h4>
+  </div>
+  <div class="col-md-4 mb-4 mb-md-3">
+    <div class="w-3 mx-auto">
+      <canvas
+        class="ex-graph"
+        width="200" height="200"
+        data-chart="doughnut"
+        data-dataset="[100,260]"
+        data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }"
+        data-labels="['Referrals', 'Direct']">
+      </canvas>
+    </div>
+    <strong class="text-muted">Traffic</strong>
+    <h4>Direct vs Referrals</h4>
+  </div>
+</div>
+//-->
+<div class="hr-divider mt-5 mb-3">
+  <h3 class="hr-divider-content hr-divider-heading">Summary</h3>
+</div>
+<h4>실험환경 개요</h4>
+
+<h7>접목묘 실험 검색</h7>
+<div class="row" >
+  <form class="sidebar-form col" style="display: inline-block;float:left; margin:0px;">
+    <input class="form-control" type="text" placeholder="검색">
+    <button type="submit" class="btn-link">
+      <span class="icon icon-magnifying-glass"></span>
+    </button>
+  </form>
+  <div class="btn-toolbar dashhead-toolbar col" style="display: inline-block; float: right; margin: 0px;">
+      <div class="btn-toolbar-item input-with-icon">
+        <input type="text" value="12/05/18 - 12/05/18" class="form-control" data-provide="datepicker">
+        <span class="icon icon-calendar"></span>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="card mt-3 col">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Experiment Period</h6>
+    <p class="card-text">
+      Experiment Date : <br>
+      Sowing date : <br>
+      Injection Date : <br>
+      Irrigation Period :<br>
+    </p>
+    <a href="#" class="card-link">상세하게</a>
+  </div>
+</div>
+<div class="card mt-3 col">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Grafting plant</h6>
+    <p class="card-text">
+     Name :<br>
+    SCION :<br>
+    Root Stock :<br>
+    Grafting : <br>
+
+    </p>
+    <a href="#" class="card-link">상세하게</a>
+  </div>
+</div>
+<div class="card mt-3 col">
+  <div class="card-body">
+    <h5 class="card-title"> </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Experiment Env.</h6>
+    <p class="card-text">
+     Lighting Source :<br>
+Irrigation :<br>
+Water Content :<br>
+SPAD :<br>
+Colony-forming unit :<br>
+    </p>
+    <a href="#" class="card-link">상세하게</a>
+  </div>
+</div>
+</div>
+<!--
+<div class="row mt-3">
+  <div class="col-md-6 mb-5">
+    <div class="list-group mb-3">
+      <h6 class="list-group-header">
+        Countries
+      </h6>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 62.4%;"></span>
+          United States
+          <span class="ml-a text-muted">62.4%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 15.0%;"></span>
+          India
+          <span class="ml-a text-muted">15.0%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 5.0%;"></span>
+          United Kingdom
+          <span class="ml-a text-muted">5.0%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 5.0%;"></span>
+          Canada
+          <span class="ml-a text-muted">5.0%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 4.5%;"></span>
+          Russia
+          <span class="ml-a text-muted">4.5%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 2.3%;"></span>
+          Mexico
+          <span class="ml-a text-muted">2.3%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 1.7%;"></span>
+          Spain
+          <span class="ml-a text-muted">1.7%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 1.5%;"></span>
+          France
+          <span class="ml-a text-muted">1.5%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 1.4%;"></span>
+          South Africa
+          <span class="ml-a text-muted">1.4%</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span class="list-group-progress" style="width: 1.2%;"></span>
+          Japan
+          <span class="ml-a text-muted">1.2%</span>
+        </a>
+      
+    </div>
+    <a href="#" class="btn btn-outline-primary px-3">All countries</a>
+  </div>
+  <div class="col-md-6 mb-5">
+    <div class="list-group mb-3">
+      <h6 class="list-group-header">
+        Most visited pages
+      </h6>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/ (Logged out)</span>
+          <span class="mr-a text-muted">3,929,481</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/ (Logged in)</span>
+          <span class="mr-a text-muted">1,143,393</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/tour</span>
+          <span class="mr-a text-muted">938,287</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/features/something</span>
+          <span class="mr-a text-muted">749,393</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/features/another-thing</span>
+          <span class="mr-a text-muted">695,912</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/users/username</span>
+          <span class="mr-a text-muted">501,938</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/page-title</span>
+          <span class="mr-a text-muted">392,842</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/some/page-slug</span>
+          <span class="mr-a text-muted">298,183</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/another/directory/and/page-title</span>
+          <span class="mr-a text-muted">193,129</span>
+        </a>
+      
+        <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+          <span>/one-more/page/directory/file-name</span>
+          <span class="mr-a text-muted">93,382</span>
+        </a>
+      
+    </div>
+    <a href="#" class="btn btn-outline-primary px-3">View all pages</a>
+  </div>
+</div>
+
+<div class="list-group mb-3">
+  <h6 class="list-group-header">
+    Devices and resolutions
+  </h6>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Desktop (1920x1080)</span>
+      <span class="text-muted">3,929,481</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Desktop (1366x768)</span>
+      <span class="text-muted">1,143,393</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Desktop (1440x900)</span>
+      <span class="text-muted">938,287</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Desktop (1280x800)</span>
+      <span class="text-muted">749,393</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Tablet (1024x768)</span>
+      <span class="text-muted">695,912</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Tablet (768x1024)</span>
+      <span class="text-muted">501,938</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Phone (320x480)</span>
+      <span class="text-muted">392,842</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Phone (720x450)</span>
+      <span class="text-muted">298,183</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Desktop (2560x1080)</span>
+      <span class="text-muted">193,129</span>
+    </a>
+  
+    <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+      <span>Desktop (2560x1600)</span>
+      <span class="text-muted">93,382</span>
+    </a>
+  
+</div>
+//-->
+<a href="#" class="btn btn-outline-primary px-3 mt-5">저장된 모든 접목묘 실험 보기</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="docsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Example modal</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <p>You're looking at an example modal in the dashboard theme.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cool, got it!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/tablesorter.min.js"></script>
+    <script src="assets/js/toolkit.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
+</html>
+
